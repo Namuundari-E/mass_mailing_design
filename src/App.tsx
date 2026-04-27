@@ -79,7 +79,7 @@ function App() {
                 loop
                 muted
                 playsInline
-                src="/video.mp4"
+                src="/video-ezgif.com-resize.gif"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent" />
             </div>
