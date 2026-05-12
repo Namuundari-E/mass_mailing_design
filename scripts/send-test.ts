@@ -1,13 +1,10 @@
 import { Resend } from 'resend';
 import * as dotenv from 'dotenv';
-import path from 'path';
 // to run 
 // npx tsx scripts/send-test.ts
 dotenv.config();
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const heroGifPath = path.resolve(process.cwd(), 'public/video-ezgif.com-resize.gif');
-const heroGifContentId = 'egune-hero-gif';
 
 async function sendMail() {
   const { data, error } = await resend.emails.send({
@@ -23,7 +20,7 @@ async function sendMail() {
               <!-- Hero Image -->
               <tr>
                 <td align="center" style="line-height: 0;">
-                  <img src="cid:${heroGifContentId}" alt="Egune AI" width="600" style="display: block; width: 100%; max-width: 600px; height: auto; border: 0;" />
+                  <img src="https://mass-mailing-design.vercel.app/video-ezgif.com-resize.gif" alt="Egune AI" width="600" style="display: block; width: 100%; max-width: 600px; height: auto; border: 0;" />
                 </td>
               </tr>
 
@@ -139,13 +136,6 @@ async function sendMail() {
         </tr>
       </table>
     `,
-    attachments: [
-      {
-        filename: 'video-ezgif.com-resize.gif',
-        path: heroGifPath,
-        contentId: heroGifContentId,
-      },
-    ],
   });
 
   if (error) {
